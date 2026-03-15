@@ -16,16 +16,16 @@
 
 ---
 
-## About
-
-**Customer Support v3** features comprehensive **Multi-LLM Specialist** roles for the entire AI ecosystem. It is a specialized framework for [Claude Code](https://claude.ai/claude-code) designed to transform generic AI assistance into a structured, role-based Support Engineering pipeline.
-
-Instead of a single AI trying to solve everything, this plugin dynamically assembles a team of **Specialist Agents** based on the complexity of the task—mirroring how real-world engineering teams handle mission-critical incidents.
-
 ## Key Features
 
-- **🤖 Multi-LLM Support (v3)**: Dedicated specialists for OpenAI, Anthropic (Claude), and Google (Gemini) API issues.
-- **🛡️ Tiered Support (v2)**: Structured escalation from L1 (Intake) to L2 (Technical) and L3 (Code-level fixes).
+- **🤖 Multi-LLM Specialists (New in v3)**: Dedicated experts for:
+  - **OpenAI**: GPT-4o, o1, rate limits, and function calling.
+  - **Claude**: Anthropic API, prompt caching, and streaming.
+  - **Gemini**: Vertex AI, multi-modality, and context management.
+- **🛡️ Tiered Escalation (v2)**: Structured workflow from **L1** (Intake) ⇢ **L2** (Technical) ⇢ **L3** (Code Fixes).
+- **🎭 Multi-Role Orchestration**: Automatically staffs Triage, Log Investigation, RCA, and Specialist roles.
+- **🔍 Background Intelligence**: Automated `log-analyzer` and `kb-matcher` provide context while you work.
+- **📚 KB Integration**: Load runbooks, incident reports, and docs into the agents' context.
 - **🎭 Multi-Role Orchestration**: Automatically staffs Triage, Log Investigation, RCA, and Specialist roles.
 - **🔍 Background Intelligence**: Automated `log-analyzer` and `kb-matcher` provide context while you work.
 - **📚 Knowledge Base Integration**: Load runbooks, past incident reports, and docs directly into the agents' context.
@@ -51,10 +51,14 @@ Then try:
 
 ## The Team
 
-| **Support Manager** Orchestrates | **L1 Support** Intake | **L2 Support** Investigation | **L3 Support** Code Fixes |
-| **OpenAI Expert** GPT/TPM | **Claude Expert** Prompt Cache | **Gemini Expert** Vertex/Multi-modal | **Triage Specialist** Classifies |
-| **Log Investigator** Traces | **Root Cause Analyst** Diagnoses | **Solutions Architect** Fixes | **Incident Reporter** Documents |
-| **Customer Comms** Drafts | **KB Engineer** Searches | | |
+The Support Manager dynamically assembles your team from 13 specialist roles:
+
+| Category | Roles |
+| :--- | :--- |
+| **Core Workflow** | Support Manager, Triage Specialist, Incident Reporter, KB Engineer, Customer Comms |
+| **Escalation Tiers** | L1 Support (Intake), L2 Support (Technical), L3 Support (Code Fixes) |
+| **Technical Specialists**| Log Investigator, Root Cause Analyst, Solutions Architect |
+| **LLM Providers** | OpenAI Specialist, Claude Specialist, Gemini Specialist |
 
 ---
 
