@@ -9,17 +9,26 @@
 
 ### A Virtual Support Engineering Team for Claude Code
 
-```
-
-### A Virtual Support Engineering Team for Claude Code
-
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Claude Code](https://img.shields.io/badge/Claude_Code-Plugin-blueviolet)](https://claude.ai/claude-code)
-[![Roles](https://img.shields.io/badge/Specialist_Roles-7-orange)]()
+[![Roles](https://img.shields.io/badge/Specialist_Roles-10-orange)]()
 [![Commands](https://img.shields.io/badge/Slash_Commands-7-green)]()
 
-**Instead of generic AI support help, Customer Support assembles the right specialist
-for each task — exactly like a real support engineering team staffs an incident.**
+---
+
+## About
+
+**Customer Support** is a specialized framework for [Claude Code](https://claude.ai/claude-code) designed to transform generic AI assistance into a structured, role-based Support Engineering pipeline.
+
+Instead of a single AI trying to solve everything, this plugin dynamically assembles a team of **Specialist Agents** based on the complexity of the task—mirroring how real-world engineering teams handle mission-critical incidents.
+
+## Key Features
+
+- **🛡️ Tiered Support (v2)**: Structured escalation from L1 (Intake) to L2 (Technical) and L3 (Code-level fixes).
+- **🎭 Multi-Role Orchestration**: Automatically staffs Triage, Log Investigation, RCA, and Specialist roles.
+- **🔍 Background Intelligence**: Automated `log-analyzer` and `kb-matcher` provide context while you work.
+- **📚 Knowledge Base Integration**: Load runbooks, past incident reports, and docs directly into the agents' context.
+- **⚡ Performance-Ready**: Built for speed and precision in high-pressure support environments.
 
 [Installation](#installation) · [Commands](#commands) · [The Team](#the-team) · [How It Works](#how-it-works)
 
@@ -41,10 +50,11 @@ Then try:
 
 ## The Team
 
-| | | | | | | |
-|---|---|---|---|---|---|---|
-| **Support Manager** Orchestrates | **Triage Specialist** Classifies | **Log Investigator** Traces | **Root Cause Analyst** Diagnoses | **Solutions Architect** Fixes | **Incident Reporter** Documents | **Customer Comms** Communicates |
-| **KB Engineer** Searches | *Support Manager picks only the roles your task actually needs* | | | | | |
+| | | | |
+|---|---|---|---|
+| **Support Manager** Orchestrates | **L1 Support** Intake | **L2 Support** Investigation | **L3 Support** Code Fixes |
+| **Triage Specialist** Classifies | **Log Investigator** Traces | **Root Cause Analyst** Diagnoses | **Solutions Architect** Fixes |
+| **Incident Reporter** Documents | **Customer Comms** Drafts | **KB Engineer** Searches | *Targeted Staffing* |
 
 ---
 
