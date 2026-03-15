@@ -226,7 +226,10 @@ customer-support/
 │       ├── solutions-architect.md     # Fix playbooks, CLI commands
 │       ├── incident-reporter.md       # Post-mortem template, blameless culture
 │       ├── kb-engineer.md             # KB search, runbook matching, gaps
-│       └── customer-comms.md          # Message templates, tone by tier
+│       ├── customer-comms.md          # Message templates, tone by tier
+│       ├── l1-support.md              # Intake, info gathering, SLA
+│       ├── l2-support.md              # Technical investigation, repro
+│       └── l3-support.md              # Code fixes, hotfixes, rollback
 ├── commands/
 │   ├── support.md                     # /support — full pipeline
 │   ├── triage.md                      # /triage — classification only

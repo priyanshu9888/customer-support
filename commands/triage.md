@@ -22,6 +22,6 @@ tags, related components, deployment correlation notes.
 ```
 
 ## When to Use
-- Quick initial classification before escalating
+- Quick initial classification before escalating to **L1 Support**
 - Validating a severity label before paging someone
 - Bulk triage of queued tickets

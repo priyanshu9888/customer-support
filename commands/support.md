@@ -23,6 +23,7 @@ In sequence, with each result feeding the next:
 5. **🔧 Solutions Architect** — immediate actions with CLI commands, short+long-term fix
 6. **📋 Incident Reporter** — full incident report with action items
 7. **📣 Customer Comms** — customer message drafts for each incident stage
+8. **🛡️ L1 ⇢ L2 ⇢ L3** — tiered escalation pipeline as needed
 
 ## Parameters (all optional — auto-detected from description)
 
