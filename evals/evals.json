@@ -1,0 +1,83 @@
+{
+  "evals": [
+    {
+      "name": "basic-triage-p2",
+      "description": "Verify triage correctly classifies a P2 API degradation",
+      "input": "/triage Users are getting intermittent 503 errors on our REST API. About 30% of requests failing. Started 2 hours ago in EU-West region only.",
+      "assertions": [
+        { "type": "contains", "value": "P2" },
+        { "type": "contains", "value": "Availability" },
+        { "type": "contains", "value": "Region" },
+        { "type": "contains", "value": "EU-West" },
+        { "type": "not_contains", "value": "P1" },
+        { "type": "not_contains", "value": "Global" }
+      ]
+    },
+    {
+      "name": "log-investigation-connection-pool",
+      "description": "Verify log investigator correctly identifies connection pool exhaustion",
+      "input": "/investigate\n[ERROR] 14:23:11 - upstream timeout after 30000ms host=api-eu-west-01.internal\n[WARN]  14:23:09 - retry attempt 3/3 for request req_8821xk\n[ERROR] 14:22:58 - connection pool exhausted: max=100 active=100 waiting=47\n[INFO]  14:22:45 - health check failed latency=29847ms\n[ERROR] 14:22:31 - circuit breaker OPEN for service: api-eu-west pool\n[WARN]  14:20:02 - elevated latency p99=4200ms baseline=180ms\n[INFO]  14:20:00 - deployment completed: api-gateway v2.14.3 eu-west",
+      "assertions": [
+        { "type": "contains", "value": "connection pool" },
+        { "type": "contains", "value": "circuit breaker" },
+        { "type": "contains", "value": "deployment" },
+        { "type": "contains", "value": "4200" },
+        { "type": "contains", "value": "timeline" },
+        { "type": "contains_one_of", "values": ["Strong", "strong"] }
+      ]
+    },
+    {
+      "name": "full-pipeline-with-logs",
+      "description": "Full /support pipeline produces all 5 agent sections",
+      "input": "/support severity=P2 product='API Gateway' EU-West API returning 503 errors, 28% failure rate, started 2h ago after deployment of v2.14.3\n---logs\n[ERROR] 14:23:11 - upstream timeout host=api-eu-west-01.internal\n[ERROR] 14:22:58 - connection pool exhausted: max=100 active=100\n[ERROR] 14:22:31 - circuit breaker OPEN\n[INFO]  14:20:00 - deployment api-gateway v2.14.3 eu-west",
+      "assertions": [
+        { "type": "contains", "value": "TRIAGE" },
+        { "type": "contains", "value": "LOG INVESTIGATOR" },
+        { "type": "contains", "value": "ROOT CAUSE" },
+        { "type": "contains", "value": "SOLUTION" },
+        { "type": "contains", "value": "REPORT" },
+        { "type": "contains", "value": "kubectl" },
+        { "type": "contains", "value": "rollback" },
+        { "type": "contains", "value": "connection" }
+      ]
+    },
+    {
+      "name": "rca-causal-chain",
+      "description": "RCA produces causal chain and confidence level",
+      "input": "/rca Connection pool exhausted on api-gateway eu-west. Pool hit 100/100 exactly 2h after v2.14.3 deployed. US/APAC healthy. No traffic spike.",
+      "assertions": [
+        { "type": "contains_one_of", "values": ["causal chain", "CAUSAL CHAIN", "Causal Chain"] },
+        { "type": "contains_one_of", "values": ["High", "Medium", "Low"] },
+        { "type": "contains", "value": "v2.14.3" },
+        { "type": "contains_one_of", "values": ["contributing factor", "CONTRIBUTING", "Contributing"] }
+      ]
+    },
+    {
+      "name": "fix-has-cli-commands",
+      "description": "Solutions Architect produces executable CLI commands",
+      "input": "/fix API gateway connection pool exhausted. Root cause: missing await in v2.14.3. Need to rollback to v2.14.2.",
+      "assertions": [
+        { "type": "contains", "value": "kubectl" },
+        { "type": "contains", "value": "rollout" },
+        { "type": "contains", "value": "IMMEDIATE" },
+        { "type": "contains_one_of", "values": ["rollback", "roll back", "undo"] },
+        { "type": "contains_one_of", "values": ["monitoring", "MONITORING", "verify", "VERIFY"] }
+      ]
+    },
+    {
+      "name": "report-postmortem-structure",
+      "description": "Post-mortem report contains required sections",
+      "input": "/report type=postmortem P2 API Gateway EU-West 43 min — connection pool exhaustion from missing await in v2.14.3. Rolled back. Need pool alerts.",
+      "assertions": [
+        { "type": "contains_one_of", "values": ["EXECUTIVE SUMMARY", "Executive Summary"] },
+        { "type": "contains", "value": "TIMELINE" },
+        { "type": "contains_one_of", "values": ["WENT WELL", "went well"] },
+        { "type": "contains_one_of", "values": ["WENT POORLY", "went poorly"] },
+        { "type": "contains_one_of", "values": ["ACTION ITEMS", "Action Items"] },
+        { "type": "contains_one_of", "values": ["LESSONS", "Lessons"] },
+        { "type": "not_contains", "value": "Alice" },
+        { "type": "not_contains", "value": "John" }
+      ]
+    }
+  ]
+}

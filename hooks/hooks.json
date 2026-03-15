@@ -1,0 +1,9 @@
+{
+  "hooks": [
+    {
+      "event": "sessionStart",
+      "script": "scripts/detect-support-context.sh",
+      "description": "Auto-detect stack, log files, KB docs, and past incidents in workspace"
+    }
+  ]
+}

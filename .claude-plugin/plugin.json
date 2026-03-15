@@ -1,0 +1,62 @@
+{
+  "name": "customer-support",
+  "version": "1.0.0",
+  "description": "A Virtual Support Engineering Team for Claude Code — 7 specialist roles, 6 slash commands, 2 background agents, full triage-to-postmortem pipeline",
+  "author": "your-github-username",
+  "license": "MIT",
+  "skills": [
+    "skills/support/SKILL.md"
+  ],
+  "commands": [
+    {
+      "name": "support",
+      "description": "Run full 5-agent support pipeline on a ticket",
+      "file": "commands/support.md"
+    },
+    {
+      "name": "triage",
+      "description": "Classify and score a ticket — severity, SLA, escalation",
+      "file": "commands/triage.md"
+    },
+    {
+      "name": "investigate",
+      "description": "Analyze logs, errors, and traces",
+      "file": "commands/investigate.md"
+    },
+    {
+      "name": "rca",
+      "description": "Root cause analysis on an incident",
+      "file": "commands/rca.md"
+    },
+    {
+      "name": "fix",
+      "description": "Generate resolution plan with CLI commands",
+      "file": "commands/fix.md"
+    },
+    {
+      "name": "report",
+      "description": "Generate incident report or post-mortem",
+      "file": "commands/report.md"
+    },
+    {
+      "name": "kb",
+      "description": "Manage support knowledge base documents",
+      "file": "commands/kb.md"
+    }
+  ],
+  "agents": [
+    {
+      "name": "log-analyzer",
+      "description": "Background agent: deep log analysis, pattern frequency, spike detection",
+      "file": "agents/log-analyzer.md",
+      "trigger": "background"
+    },
+    {
+      "name": "kb-matcher",
+      "description": "Background agent: scans KB for runbooks, precedents, known issues",
+      "file": "agents/kb-matcher.md",
+      "trigger": "background"
+    }
+  ],
+  "hooks": "hooks/hooks.json"
+}
