@@ -18,6 +18,9 @@ pipeline — labelling each section with the role that produced it.
 | **Incident Reporter** | `references/incident-reporter.md` | Post-resolution or /report |
 | **KB Engineer** | `references/kb-engineer.md` | KB docs loaded, or /kb used |
 | **Customer Comms** | `references/customer-comms.md` | Customer message needed |
+| **L1 Support** | `references/l1-support.md` | New ticket intake / triage |
+| **L2 Support** | `references/l2-support.md` | Deep technical investigation |
+| **L3 Support** | `references/l3-support.md` | Code changes / production hotfixes |
 
 ---
 
@@ -32,6 +35,8 @@ Ticket + logs                       → Triage + Log Investigator + RCA + Soluti
 KB docs loaded                      → add KB Engineer to any of the above
 Customer message explicitly needed  → add Customer Comms
 /report or post-mortem request      → Incident Reporter only (or + others)
+Escalation pipeline (standard)      → L1 + L2 + L3
+High-severity incident              → L1 + L2 + L3 + Incident Reporter
 ```
 
 ---

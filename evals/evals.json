@@ -78,6 +78,18 @@
         { "type": "not_contains", "value": "Alice" },
         { "type": "not_contains", "value": "John" }
       ]
+    },
+    {
+      "name": "tiered-escalation-flow",
+      "description": "Verify tiered support roles are mentioned in a full support pipeline",
+      "input": "/support level=L1 The checkout page is hanging for all premium users. I've attached logs showing database timeouts.",
+      "assertions": [
+        { "type": "contains", "value": "L1 SUPPORT" },
+        { "type": "contains", "value": "L2 SUPPORT" },
+        { "type": "contains", "value": "L3 SUPPORT" },
+        { "type": "contains", "value": "escalate" },
+        { "type": "contains", "value": "logs" }
+      ]
     }
   ]
 }
