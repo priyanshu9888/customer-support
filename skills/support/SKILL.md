@@ -21,6 +21,9 @@ pipeline — labelling each section with the role that produced it.
 | **L1 Support** | `references/l1-support.md` | New ticket intake / triage |
 | **L2 Support** | `references/l2-support.md` | Deep technical investigation |
 | **L3 Support** | `references/l3-support.md` | Code changes / production hotfixes |
+| **OpenAI Specialist** | `references/openai-specialist.md` | OpenAI, GPT-4, GPT-3.5 mentions |
+| **Claude Specialist** | `references/claude-specialist.md` | Claude, Anthropic, Messages API mentions |
+| **Gemini Specialist** | `references/gemini-specialist.md` | Gemini, Vertex AI, AI Studio mentions |
 
 ---
 
@@ -37,6 +40,9 @@ Customer message explicitly needed  → add Customer Comms
 /report or post-mortem request      → Incident Reporter only (or + others)
 Escalation pipeline (standard)      → L1 + L2 + L3
 High-severity incident              → L1 + L2 + L3 + Incident Reporter
+OpenAI / GPT related                → add OpenAI Specialist
+Claude / Anthropic related           → add Claude Specialist
+Gemini / Vertex related              → add Gemini Specialist
 ```
 
 ---

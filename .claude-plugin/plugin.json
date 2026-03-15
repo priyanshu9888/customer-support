@@ -1,7 +1,7 @@
 {
   "name": "customer-support",
-  "version": "1.0.0",
-  "description": "A Virtual Support Engineering Team for Claude Code — 7 specialist roles, 6 slash commands, 2 background agents, full triage-to-postmortem pipeline",
+  "version": "3.0.0",
+  "description": "Multi-LLM Support Engineering — Specialists for OpenAI, Claude, and Gemini. Includes tiered escalation (L1-L3) and 10+ agents.",
   "author": "your-github-username",
   "license": "MIT",
   "skills": [

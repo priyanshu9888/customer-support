@@ -11,19 +11,20 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Claude Code](https://img.shields.io/badge/Claude_Code-Plugin-blueviolet)](https://claude.ai/claude-code)
-[![Roles](https://img.shields.io/badge/Specialist_Roles-10-orange)]()
+[![Roles](https://img.shields.io/badge/Specialist_Roles-13-orange)]()
 [![Commands](https://img.shields.io/badge/Slash_Commands-7-green)]()
 
 ---
 
 ## About
 
-**Customer Support** is a specialized framework for [Claude Code](https://claude.ai/claude-code) designed to transform generic AI assistance into a structured, role-based Support Engineering pipeline.
+**Customer Support v3** features comprehensive **Multi-LLM Specialist** roles for the entire AI ecosystem. It is a specialized framework for [Claude Code](https://claude.ai/claude-code) designed to transform generic AI assistance into a structured, role-based Support Engineering pipeline.
 
 Instead of a single AI trying to solve everything, this plugin dynamically assembles a team of **Specialist Agents** based on the complexity of the task—mirroring how real-world engineering teams handle mission-critical incidents.
 
 ## Key Features
 
+- **🤖 Multi-LLM Support (v3)**: Dedicated specialists for OpenAI, Anthropic (Claude), and Google (Gemini) API issues.
 - **🛡️ Tiered Support (v2)**: Structured escalation from L1 (Intake) to L2 (Technical) and L3 (Code-level fixes).
 - **🎭 Multi-Role Orchestration**: Automatically staffs Triage, Log Investigation, RCA, and Specialist roles.
 - **🔍 Background Intelligence**: Automated `log-analyzer` and `kb-matcher` provide context while you work.
@@ -50,11 +51,10 @@ Then try:
 
 ## The Team
 
-| | | | |
-|---|---|---|---|
 | **Support Manager** Orchestrates | **L1 Support** Intake | **L2 Support** Investigation | **L3 Support** Code Fixes |
-| **Triage Specialist** Classifies | **Log Investigator** Traces | **Root Cause Analyst** Diagnoses | **Solutions Architect** Fixes |
-| **Incident Reporter** Documents | **Customer Comms** Drafts | **KB Engineer** Searches | *Targeted Staffing* |
+| **OpenAI Expert** GPT/TPM | **Claude Expert** Prompt Cache | **Gemini Expert** Vertex/Multi-modal | **Triage Specialist** Classifies |
+| **Log Investigator** Traces | **Root Cause Analyst** Diagnoses | **Solutions Architect** Fixes | **Incident Reporter** Documents |
+| **Customer Comms** Drafts | **KB Engineer** Searches | | |
 
 ---
 
@@ -229,7 +229,10 @@ customer-support/
 │       ├── customer-comms.md          # Message templates, tone by tier
 │       ├── l1-support.md              # Intake, info gathering, SLA
 │       ├── l2-support.md              # Technical investigation, repro
-│       └── l3-support.md              # Code fixes, hotfixes, rollback
+│       ├── l3-support.md              # Code fixes, hotfixes, rollback
+│       ├── openai-specialist.md       # OpenAI API, GPT-4, o1, rate limits [NEW]
+│       ├── claude-specialist.md       # Anthropic API, Prompt Caching [NEW]
+│       └── gemini-specialist.md       # Gemini, Vertex AI, Multi-modal [NEW]
 ├── commands/
 │   ├── support.md                     # /support — full pipeline
 │   ├── triage.md                      # /triage — classification only
